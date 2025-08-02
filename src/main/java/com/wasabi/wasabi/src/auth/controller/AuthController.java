@@ -30,8 +30,12 @@ import com.wasabi.wasabi.src.auth.exception.UserAlreadyExistsException;
 import com.wasabi.wasabi.src.auth.services.CustomUserDetailsService;
 import com.wasabi.wasabi.src.auth.services.RegisterService;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
+
 @RestController
 @RequestMapping("/auth")
+@Tag(name = "Authentication", description = "Authentication endpoints for user registration and login")
 public class AuthController {
     private static final Logger logger = LoggerFactory.getLogger(AuthController.class);
 
@@ -48,6 +52,7 @@ public class AuthController {
     private RegisterService authService;
 
     @PostMapping("/register")
+    @Operation(summary = "Register new user", description = "Register a new user account")
     public ResponseEntity<ApiResponse<?>> register(@Valid @RequestBody RegisterRequest request,
             BindingResult bindingResult) {
         logger.info("Registration attempt for username: {}", request != null ? request.getUsername() : "null");
@@ -94,6 +99,7 @@ public class AuthController {
     }
 
     @PostMapping("/login")
+    @Operation(summary = "User login", description = "Authenticate user and return JWT token")
     public ResponseEntity<ApiResponse<?>> login(@Valid @RequestBody AuthenticationRequest request,
             BindingResult bindingResult) {
         logger.info("Login attempt for username: {}", request != null ? request.getUsername() : "null");
