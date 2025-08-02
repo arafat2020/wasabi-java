@@ -2,8 +2,8 @@ package com.wasabi.wasabi.src.auth.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import com.wasabi.wasabi.src.auth.response.ApiResponse;
-import com.wasabi.wasabi.src.auth.response.ErrorType;
+import com.wasabi.wasabi.src.utils.response.ApiResponse;
+import com.wasabi.wasabi.src.utils.response.ErrorType;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -22,11 +22,11 @@ import jakarta.validation.Valid;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import com.wasabi.wasabi.src.auth.components.AuthUtils;
+import com.wasabi.wasabi.src.utils.jwt.JwtUtils;
 import com.wasabi.wasabi.src.auth.dto.AuthenticationRequest;
 import com.wasabi.wasabi.src.auth.dto.AuthenticationResponse;
 import com.wasabi.wasabi.src.auth.dto.RegisterRequest;
-import com.wasabi.wasabi.src.auth.exception.UserAlreadyExistsException;
+import com.wasabi.wasabi.src.utils.exception.UserAlreadyExistsException;
 import com.wasabi.wasabi.src.auth.services.CustomUserDetailsService;
 import com.wasabi.wasabi.src.auth.services.RegisterService;
 
@@ -46,7 +46,7 @@ public class AuthController {
     private CustomUserDetailsService userDetailsService;
 
     @Autowired
-    private AuthUtils jwtUtil;
+    private JwtUtils jwtUtil;
 
     @Autowired
     private RegisterService authService;

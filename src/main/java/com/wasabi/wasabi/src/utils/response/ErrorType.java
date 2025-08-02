@@ -1,4 +1,4 @@
-package com.wasabi.wasabi.src.auth.response;
+package com.wasabi.wasabi.src.utils.response;
 
 public enum ErrorType {
     VALIDATION_ERROR("VALIDATION_ERROR"),

@@ -1,4 +1,4 @@
-package com.wasabi.wasabi.src.auth.conf;
+package com.wasabi.wasabi.src.utils.jwt;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;

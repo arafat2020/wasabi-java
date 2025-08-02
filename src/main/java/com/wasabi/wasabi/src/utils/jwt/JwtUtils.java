@@ -1,7 +1,6 @@
-package com.wasabi.wasabi.src.auth.components;
+package com.wasabi.wasabi.src.utils.jwt;
 
 import java.security.Key;
-import java.util.Base64;
 import java.util.Date;
 
 import javax.crypto.spec.SecretKeySpec;
@@ -14,7 +13,7 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 
 @Component
-public class AuthUtils {
+public class JwtUtils {
     @Value("${app.jwt.secret}")
     private String secret;
 

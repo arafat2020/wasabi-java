@@ -1,4 +1,4 @@
-package com.wasabi.wasabi.src.auth.response;
+package com.wasabi.wasabi.src.utils.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

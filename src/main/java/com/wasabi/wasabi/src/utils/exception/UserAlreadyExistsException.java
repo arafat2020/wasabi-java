@@ -1,4 +1,4 @@
-package com.wasabi.wasabi.src.auth.exception;
+package com.wasabi.wasabi.src.utils.exception;
 
 public class UserAlreadyExistsException extends RuntimeException {
     public UserAlreadyExistsException(String message) {
