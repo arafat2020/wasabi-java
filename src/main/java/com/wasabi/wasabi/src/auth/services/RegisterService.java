@@ -8,7 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.wasabi.wasabi.src.auth.dto.AuthenticationRequest;
+//import com.wasabi.wasabi.src.auth.dto.AuthenticationRequest;
 import com.wasabi.wasabi.src.auth.dto.RegisterRequest;
 import com.wasabi.wasabi.src.utils.exception.UserAlreadyExistsException;
 import com.wasabi.wasabi.src.auth.model.UserModel;

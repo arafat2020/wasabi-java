@@ -12,7 +12,7 @@ public class StaticResourceConfig implements WebMvcConfigurer {
     private final FileUploadConfig fileUploadConfig;
     
     @Override
-    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+    public void addResourceHandlers(@org.springframework.lang.NonNull ResourceHandlerRegistry registry) {
         String uploadDir = fileUploadConfig.getDir();
         if (!uploadDir.startsWith("file:")) {
             uploadDir = "file:" + uploadDir + "/";

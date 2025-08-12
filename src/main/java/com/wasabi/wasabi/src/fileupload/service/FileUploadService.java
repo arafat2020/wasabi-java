@@ -44,7 +44,7 @@ public class FileUploadService {
             Files.createDirectories(uploadPath);
             
             // Generate unique filename
-            String originalFileName = StringUtils.cleanPath(file.getOriginalFilename());
+            String originalFileName = file.getOriginalFilename() != null ? StringUtils.cleanPath(file.getOriginalFilename()) : "";
             String fileExtension = getFileExtension(originalFileName);
             String uniqueFileName = UUID.randomUUID().toString() + "." + fileExtension;
             
@@ -163,7 +163,7 @@ public class FileUploadService {
             throw new FileUploadException("Please select a file to upload");
         }
         
-        String fileName = StringUtils.cleanPath(file.getOriginalFilename());
+        String fileName = file.getOriginalFilename() != null ? StringUtils.cleanPath(file.getOriginalFilename()) : "";
         if (fileName.contains("..")) {
             throw new FileUploadException("Filename contains invalid path sequence: " + fileName);
         }
