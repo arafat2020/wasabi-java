@@ -2,10 +2,14 @@ package com.wasabi.wasabi.src.auth.model;
 
 import java.util.UUID;
 
+import com.wasabi.wasabi.src.fileupload.model.FileUpload;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;
@@ -30,4 +34,8 @@ public class UserModel {
 
     @Column(unique = true, nullable = false)
     private String email;
+
+    @OneToOne
+    @JoinColumn(name = "profile_image_id", referencedColumnName = "id")
+    private FileUpload profileImage;
 }
